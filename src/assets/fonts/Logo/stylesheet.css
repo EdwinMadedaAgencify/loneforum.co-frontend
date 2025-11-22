@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Kolaka';
+    src: url('Kolaka.woff2') format('woff2'),
+        url('Kolaka.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garlic Demo';
+    src: url('Garlic-Demo.woff2') format('woff2'),
+        url('Garlic-Demo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bright Nattelia';
+    src: url('BrightNattelia.woff2') format('woff2'),
+        url('BrightNattelia.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

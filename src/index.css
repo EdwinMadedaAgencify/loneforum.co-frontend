@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Andika";
+  src: url("/src/assets/fonts/Andika/Andika.woff2") format("woff2"),
+    url("/src/assets/fonts/Andika/Andika.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("/src/assets/fonts/OpenSans/OpenSans-Regular.woff2") format("woff2"),
+    url("/src/assets/fonts/OpenSans/OpenSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("/src/assets/fonts/OpenSans/OpenSans-Bold.woff2") format("woff2"),
+    url("/src/assets/fonts/OpenSans/OpenSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kolaka";
+  src: url("/src/assets/fonts/Logo/Kolaka.woff2") format("woff2"),
+    url("/src/assets/fonts/Logo/Kolaka.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Garlic Demo";
+  src: url("/src/assets/fonts/Logo/Garlic-Demo.woff2") format("woff2"),
+    url("/src/assets/fonts/Logo/Garlic-Demo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bright Nattelia";
+  src: url("/src/assets/fonts/Logo/BrightNattelia.woff2") format("woff2"),
+    url("/src/assets/fonts/Logo/BrightNattelia.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overscroll-behavior: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Andika", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  overscroll-behavior: none;
+  min-height: 100%;
+  max-width: 100%;
+  min-width: 320px;
+  /* display: flex;
+  flex-direction: column;
+  place-items: center;
+  min-width: 320px; */
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "OpenSans", sans-serif;
+  font-weight: 600;
+}
+
+button {
+  font-family: "OpenSans", sans-serif;
+  font-weight: 700;
+}
+
+a {
+  font-family: "OpenSans", sans-serif;
+  font-weight: 600;
+  text-decoration: inherit;
+}
+
+p {
+  font-family: "Andika", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+@layer base {
+  :root {
+    --background: 90 11% 96%; /* Represents the primary background color, typically used for the main layout or page background. */
+    --foreground: 120 39% 10%; /* Primary text color, ensuring readability against the background. */
+    --card: 90 11% 96%; /* Background color for cards or surfaces. */
+    --card-foreground: 120 39% 10%; /* Text color for content displayed on card surfaces. */
+    --popover: 90 11% 96%; /* Background color for pop-ups like tooltips or dropdowns. */
+    --popover-foreground: 120 39% 10%; /* Text color for content in pop-ups. */
+    --primary: 32 75% 45%; /* Added a hint of brown for primary emphasis elements like buttons or active states. */
+    --primary-foreground: 25 60% 20%; /* Slightly muted for text or icons displayed on primary elements. */
+    --secondary: 34 30% 88%; /* Subtle brown tint for secondary actions or less prominent elements. */
+    --secondary-foreground: 24 20% 15%; /* Text color for secondary elements, maintaining contrast. */
+    --muted: 34 30% 88%; /* Background for muted or de-emphasized elements, like disabled buttons. */
+    --muted-foreground: 28 20% 50%; /* Text color for muted elements, ensuring subdued visibility. */
+    --accent: 34 30% 88%; /* Background color for accents or highlights. */
+    --accent-foreground: 28 15% 20%; /* Text color for accent elements. */
+    --destructive: 0 84.2% 60.2%; /* Strong red tone for destructive actions like delete buttons. */
+    --destructive-foreground: 60 9.1% 97.8%; /* Light color for text/icons on destructive elements. */
+    --border: 20 15% 80%; /* Neutral color for borders and dividers. */
+    --input: 20 15% 80%; /* Default background color for input fields. */
+    --ring: 28 65% 40%; /* Slightly earthy tone for focus rings around interactive elements. */
+    --radius: 0.5rem; /* Default border-radius for rounded corners across components. */
+    --chart-1: 30 70% 50%; /* Warmer, earthy tones for charts or visualizations. */
+    --chart-2: 35 60% 45%; /* Complementary tones for data visualization. */
+    --chart-3: 28 60% 40%;
+    --chart-4: 36 65% 52%;
+    --chart-5: 33 70% 55%; /* Richer tones for charts to create visual distinction. */
+  }
+
+  .dark {
+    --background: 120 32% 15%; /* Darker background for dark mode. */
+    --foreground: 60 9.1% 97.8%; /* Light text color for readability on dark backgrounds. */
+    --card: 120 32% 15%; /* Card background adjusted for dark mode. */
+    --card-foreground: 60 9.1% 97.8%; /* Text color for dark mode cards. */
+    --popover: 120 32% 15%; /* Pop-up background adjusted for dark mode. */
+    --popover-foreground: 60 9.1% 97.8%; /* Text color for dark mode pop-ups. */
+    --primary: 32 75% 45%; /* Primary color remains consistent for both themes. */
+    --primary-foreground: 25 60% 20%; /* Muted text for primary elements in dark mode. */
+    --secondary: 34 20% 15%; /* Warmer, earthier secondary background for dark mode. */
+    --secondary-foreground: 60 9.1% 97.8%; /* Text color for secondary elements in dark mode. */
+    --muted: 34 20% 15%; /* Muted background adjusted for dark mode. */
+    --muted-foreground: 24 10% 65%; /* Text color for muted elements in dark mode. */
+    --accent: 34 20% 15%; /* Accent background for dark mode. */
+    --accent-foreground: 60 9.1% 97.8%; /* Text color for accents in dark mode. */
+    --destructive: 0 62.8% 30.6%; /* Darker red tone for destructive actions in dark mode. */
+    --destructive-foreground: 60 9.1% 97.8%; /* Light text color for destructive actions in dark mode. */
+    --border: 34 20% 18%; /* Neutral border color for dark mode. */
+    --input: 34 20% 18%; /* Input background color for dark mode. */
+    --ring: 32 65% 35%; /* Slightly brown tint for focus rings in dark mode. */
+    --chart-1: 34 70% 45%;
+    --chart-2: 36 65% 42%;
+    --chart-3: 30 65% 40%;
+    --chart-4: 38 70% 50%;
+    --chart-5: 35 75% 52%; /* Richer tones for charts, ensuring sufficient contrast in dark mode. */
+  }
+}
+
+@layer base {
+  :root {
+    --background: 90 11% 96%; /* Primary background color remains soft, but I added more warmth for comfort */
+    --foreground: 120 39% 10%; /* Primary text color for readability */
+    --card: 90 11% 96%; /* Soft card background, consistent with the main background */
+    --card-foreground: 120 39% 10%; /* Card text color */
+    --popover: 90 11% 96%; /* Subtle background for pop-ups */
+    --popover-foreground: 120 39% 10%; /* Text color for pop-ups */
+
+    /* Primary accent with more vibrancy for key interactions */
+    --primary: 32 75% 55%; /* Slightly more saturated for buttons and active states */
+    --primary-foreground: 25 60% 20%; /* Muted text color for primary elements */
+
+    /* Secondary actions slightly warmer with greater contrast */
+    --secondary: 34 35% 82%; /* Warmer and more visible secondary action color */
+    --secondary-foreground: 25 35% 15%; /* Darker text for contrast */
+
+    /* Muted states softer with a bit more color to avoid flatness */
+    --muted: 34 30% 88%; /* Background for muted elements, now with a slight earthy tone */
+    --muted-foreground: 28 20% 50%; /* Softer text color for muted elements */
+
+    /* Accent and hover effects with more saturation to highlight interactions */
+    --accent: 34 40% 75%; /* Soft but noticeable accent color for highlights and UI elements */
+    --accent-foreground: 28 15% 25%; /* Darker text for contrast on accent elements */
+
+    /* Destructive action color stays vibrant but more muted for less harshness */
+    --destructive: 0 75% 45%; /* A more balanced red for destructive actions */
+    --destructive-foreground: 60 9.1% 97.8%; /* Light text color on destructive buttons */
+
+    /* Softened borders with more subtle contrast */
+    --border: 20 15% 80%; /* Neutral border for dividers and borders */
+
+    /* Input fields with subtle texture or shading for focus */
+    --input: 20 15% 80%; /* Background for input fields */
+
+    /* Ring color for interactive focus states, warmer brown */
+    --ring: 28 65% 45%; /* Slightly richer earthy tone */
+
+    /* Adjusted chart colors with more contrast for visibility */
+    --chart-1: 30 70% 55%; /* Slightly more saturated for better chart visibility */
+    --chart-2: 35 65% 50%;
+    --chart-3: 28 60% 45%;
+    --chart-4: 36 70% 55%;
+    --chart-5: 33 75% 60%; /* Richer tones for charts */
+  }
+
+  .dark {
+    --background: 120 32% 15%; /* Darker background for dark mode */
+    --foreground: 60 9.1% 97.8%; /* Light text for dark backgrounds */
+    --card: 120 32% 15%; /* Card background for dark mode */
+    --card-foreground: 60 9.1% 97.8%; /* Text color for cards */
+    --popover: 120 32% 15%; /* Pop-up background for dark mode */
+    --popover-foreground: 60 9.1% 97.8%; /* Text for dark mode pop-ups */
+
+    /* Primary actions in dark mode with more vibrant primary */
+    --primary: 32 75% 55%; /* Slightly richer primary color */
+    --primary-foreground: 25 60% 20%; /* Muted primary text */
+
+    /* Secondary actions more contrasted for dark mode */
+    --secondary: 34 25% 10%; /* Slightly darker and richer secondary color */
+    --secondary-foreground: 60 9.1% 97.8%; /* Light text color for dark mode */
+
+    /* Muted elements adjusted for dark mode */
+    --muted: 34 25% 15%; /* Darker muted background for dark mode */
+    --muted-foreground: 24 10% 65%; /* Softer muted text for dark mode */
+
+    /* Accent for dark mode elements */
+    --accent: 34 40% 55%; /* More noticeable accent for dark mode */
+    --accent-foreground: 60 9.1% 97.8%; /* Accent text color for dark mode */
+
+    /* Destructive actions with darker red for dark mode */
+    --destructive: 0 70% 40%; /* Muted red for destructive elements */
+    --destructive-foreground: 60 9.1% 97.8%; /* Light color for text/icons on destructive buttons */
+
+    /* Borders in dark mode with subtle contrast */
+    --border: 34 20% 15%; /* Darker borders in dark mode */
+
+    /* Inputs in dark mode with less harsh contrast */
+    --input: 34 20% 18%; /* Input fields in dark mode */
+
+    /* Focus ring with earthy brown */
+    --ring: 32 65% 45%; /* Slightly enhanced brown tone for focus ring */
+
+    /* Richer chart colors in dark mode for better visibility */
+    --chart-1: 34 70% 55%;
+    --chart-2: 36 65% 52%;
+    --chart-3: 30 70% 50%;
+    --chart-4: 38 75% 55%;
+    --chart-5: 35 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .hover-scale {
+    @apply transition-transform hover:scale-95;
+  }
+  .active-scale {
+    @apply transition-transform active:scale-[.98];
+  }
+}
